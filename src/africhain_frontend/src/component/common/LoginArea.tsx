@@ -4,9 +4,6 @@ import Image from "next/image";
 import RegisterForm from "../forms/RegisterForm";
 import LoginForm from "../forms/LoginForm";
 
-import login_option_1 from "@/assets/img/icons/google.svg";
-import login_option_2 from "@/assets/img/icons/internet-computer-icp-logo.svg";
-
 const LogingArea = ({ style }: any) => {
 
    return (
@@ -31,10 +28,10 @@ const LogingArea = ({ style }: any) => {
                         </div>
                         <div className="eg-login__social mb-10 ">
                            <div className="eg-login__option-item">
-                              <Link href="#"><Image src={login_option_2} alt="" width={26} height={26} style={{objectFit: 'contain'}} /> Sign in with Internet Identity </Link>
+                              <Link href="#"><Image src="/assets/img/icons/internet-computer-icp-logo.svg" alt="" width={26} height={26} style={{objectFit: 'contain'}} /> Sign in with Internet Identity </Link>
                            </div>
                            <div className="eg-login__option-item">
-                              <Link href="#"><Image src={login_option_1} alt=""  /> Sign in with google </Link>
+                              <Link href="#"><Image src="/assets/img/icons/google.svg" alt=""  /> Sign in with google </Link>
                            </div>
                            
                         </div>
