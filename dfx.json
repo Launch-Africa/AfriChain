@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "africhain_backend": {
+      "main": "src/africhain_backend/main.mo",
+      "type": "motoko"
+    },
+    "africhain_frontend": {
+      "dependencies": [
+        "africhain_backend"
+      ],
+      "source": [
+        "src/africhain_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "africhain_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
