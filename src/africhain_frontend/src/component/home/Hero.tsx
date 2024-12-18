@@ -1,8 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
+import { Link } from "react-router-dom";
 
-import hero_thumb from "@/assets/img/update/hero/hero-1-1.jpg"
-import CountdownClock from "../../ui/CountDownClock"
+import hero_thumb from "/assets/img/update/hero/hero-1-1.jpg"
+// import CountdownClock from "../../ui/CountDownClock"
 
 const Hero = () => {
    return (
@@ -22,16 +21,16 @@ const Hero = () => {
                <div className="row flex-row-reverse">
                   <div className="col-lg-3">
                      <div className="hero-thumb alltuchtopdown">
-                        <Image src={hero_thumb} alt="img" />
+                        <img src={hero_thumb} alt="img" />
                      </div>
                   </div>
                   <div className="col-lg-9">
                      <h1 className="hero-title">Driving Web3 Growth in Africa Through Innovation and Engagement</h1>
                      <div className="btn-wrap">
-                        <Link href="/contact" className="btn btn2" >
+                        <Link to="/contact" className="btn btn2" >
                            Learn more...
                         </Link>
-                        <Link href="/blog" className="btn btn-two" >
+                        <Link to="/blog" className="btn btn-two" >
                            Read  Documents
                         </Link>
                      </div>

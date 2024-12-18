@@ -1,13 +1,13 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 
-import project from "@/assets/img/update/invest/project.png"
-import user from "@/assets/img/update/invest/user.png"
-import investor from "@/assets/img/update/invest/investor.png"
+import { Link } from "react-router-dom";
+
+import project from "/assets/img/update/invest/project.png"
+import user from "/assets/img/update/invest/user.png"
+import investor from "/assets/img/update/invest/investor.png"
 
 interface DataType {
    id: number;
-   icon: StaticImageData;
+   icon: any;
    title: string;
    description: string;
 }
@@ -49,11 +49,11 @@ const Benefits = () => {
                   <div key={item.id} className="col-lg-4 col-md-6">
                      <div className="invest-card">
                         <div className="invest-card-icon">
-                           <Image src={item.icon} alt="icon" />
+                           <img src={item.icon} alt="icon" />
                         </div>
                         <h3 className="mb-3">{item.title}</h3>
                         <p className="mb-4">{item.description}</p>
-                        <Link className="btn btn3" href="#">Learn More</Link>
+                        <Link className="btn btn3" to="#">Learn More</Link>
                      </div>
                   </div>
                ))}

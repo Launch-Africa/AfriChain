@@ -1,8 +1,7 @@
-import Image from "next/image"
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
-import breadcrumbShape_1 from "@/assets/img/images/breadcrumb_shape01.png";
-import breadcrumbShape_2 from "@/assets/img/images/breadcrumb_shape02.png";
+import breadcrumbShape_1 from "/assets/img/images/breadcrumb_shape01.png";
+import breadcrumbShape_2 from "/assets/img/images/breadcrumb_shape02.png";
 
 const Breadcrumb = ({ title }: any) => {
    return (
@@ -14,7 +13,7 @@ const Breadcrumb = ({ title }: any) => {
                      <h2 className="title">{title}</h2>
                      <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                           <li className="breadcrumb-item"><Link href="/">Home</Link></li>
+                           <li className="breadcrumb-item"><Link to="/">Home</Link></li>
                            <li className="breadcrumb-item active" aria-current="page">{title}</li>
                         </ol>
                      </nav>
@@ -23,8 +22,8 @@ const Breadcrumb = ({ title }: any) => {
             </div>
          </div>
          <div className="breadcrumb-shape-wrap">
-            <Image src={breadcrumbShape_1} alt="" className="alltuchtopdown" />
-            <Image src={breadcrumbShape_2} alt="" className="rotateme" />
+            <img src={breadcrumbShape_1} alt="" className="alltuchtopdown" />
+            <img src={breadcrumbShape_2} alt="" className="rotateme" />
          </div>
       </section>
    )

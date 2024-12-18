@@ -1,13 +1,12 @@
 "use client"
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import UseSticky from "../../hooks/UseSticky";
-import Image from "next/image";
 import NavMenu from "./Menu/NavMenu";
 import Sidebar from "./Menu/Sidebar";
 import HeaderOffcanvas from "./Menu/HeaderOffcanvas";
 
-import logo_1 from "@/assets/img/logo/logo.png";
+import logo_1 from "/assets/img/logo/logo.png";
 
 const Header = () => {
 
@@ -25,14 +24,14 @@ const Header = () => {
                                 <div className="menu-wrap">
                                     <nav className="menu-nav">
                                         <div className="logo">
-                                            <Link href="/"><Image src={logo_1} alt="Logo" /></Link>
+                                            <Link to="/"><img src={logo_1} alt="Logo" /></Link>
                                         </div>
                                         <div className="navbar-wrap main-menu d-none d-lg-flex">
                                             <NavMenu />
                                         </div>
                                         <div className="header-action">
                                             <ul className="list-wrap">
-                                                <li className="header-login"><Link href="/login">Login<i className="fas fa-user"></i></Link></li>
+                                                <li className="header-login"><Link to="/login">Login<i className="fas fa-user"></i></Link></li>
                                                 <li className="offcanvas-menu"><a onClick={() => setOffCanvas(true)} style={{ cursor: "pointer" }} className="menu-tigger"><i className="fas fa-bars"></i></a></li>
                                             </ul>
                                         </div>

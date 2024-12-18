@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const BlogRcPost = () => {
    return (
@@ -8,8 +7,8 @@ const BlogRcPost = () => {
          <div className="rc-post-wrap">
             <div className="rc-post-item">
                <div className="thumb">
-                  <Link href="/blog-details">
-                     <Image 
+                  <Link to="/blog-details">
+                     <img 
                         src="/assets/img/blog/rc_post01.jpg" 
                         alt="img"
                         width={100}
@@ -20,7 +19,7 @@ const BlogRcPost = () => {
                <div className="content">
                   <span className="date">October 05, 2024</span>
                   <h5 className="title">
-                     <Link href="/blog-details">
+                     <Link to="/blog-details">
                         The African blockchain revolution is here
                      </Link>
                   </h5>
@@ -28,8 +27,8 @@ const BlogRcPost = () => {
             </div>
             <div className="rc-post-item">
                <div className="thumb">
-                  <Link href="/blog-details">
-                     <Image 
+                  <Link to="/blog-details">
+                     <img 
                         src="/assets/img/blog/rc_post02.jpg" 
                         alt="img"
                         width={100}
@@ -40,7 +39,7 @@ const BlogRcPost = () => {
                <div className="content">
                   <span className="date">October 07, 2024</span>
                   <h5 className="title">
-                     <Link href="/blog-details">
+                     <Link to="/blog-details">
                         Web3 education initiatives in Africa
                      </Link>
                   </h5>

@@ -1,10 +1,9 @@
 "use client"
-import Image from "next/image"
 import Slider from "react-slick";
 import React, { useRef } from "react";
 import road_map_data from "../../data/RoadMapData";
 
-import roadmap_bg from "@/assets/img/update/bg/bg-gradient1-1.jpg";
+import roadmap_bg from "/assets/img/update/bg/bg-gradient1-1.jpg";
 
 const settings = {
    dots: false,
@@ -56,7 +55,6 @@ const settings = {
 }
 
 const RoadMap = () => {
-
    const sliderRef = useRef<Slider | null>(null);
 
    const handlePrevClick = () => {
@@ -74,7 +72,7 @@ const RoadMap = () => {
    return (
       <div className="pt-130 pb-140 overflow-hidden bg-black2 position-relative z-index-common" id="roadMap">
          <div className="bg-gradient-2">
-            <Image src={roadmap_bg} alt="img" />
+            <img src={roadmap_bg} alt="img" />
          </div>
          <div className="container">
             <div className="row justify-content-between">

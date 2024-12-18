@@ -1,17 +1,17 @@
-import { StaticImageData } from "next/image";
 
-import event_thumb_1 from "@/assets/img/update/event/1-1.png"
-import event_thumb_2 from "@/assets/img/update/event/1-2.png"
-import event_thumb_3 from "@/assets/img/update/event/1-3.png"
-import event_thumb_4 from "@/assets/img/update/event/1-4.png"
-import event_thumb_5 from "@/assets/img/update/event/1-5.png"
-import event_thumb_6 from "@/assets/img/update/event/1-6.png"
-import event_thumb_7 from "@/assets/img/update/event/1-7.png"
-import event_thumb_8 from "@/assets/img/update/event/1-8.png"
+
+import event_thumb_1 from "/assets/img/update/event/1-1.png"
+import event_thumb_2 from "/assets/img/update/event/1-2.png"
+import event_thumb_3 from "/assets/img/update/event/1-3.png"
+import event_thumb_4 from "/assets/img/update/event/1-4.png"
+import event_thumb_5 from "/assets/img/update/event/1-5.png"
+import event_thumb_6 from "/assets/img/update/event/1-6.png"
+import event_thumb_7 from "/assets/img/update/event/1-7.png"
+import event_thumb_8 from "/assets/img/update/event/1-8.png"
 
 interface DataType {
    id: number;
-   thumb: StaticImageData;
+   thumb: any;
    title: string;
    country: string;
    date: string;

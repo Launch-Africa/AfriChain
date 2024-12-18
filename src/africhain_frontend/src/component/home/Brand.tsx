@@ -1,5 +1,4 @@
 "use client"
-import Image, { StaticImageData } from "next/image"
 import Slider from "react-slick";
 
 import brandImg_1 from "@/assets/img/brand/brand_img01.png"
@@ -10,7 +9,7 @@ import brandImg_5 from "@/assets/img/brand/brand_img05.png"
 import brandImg_6 from "@/assets/img/brand/brand_img06.png"
 import brandImg_7 from "@/assets/img/brand/brand_img07.png"
 
-const brand_data: StaticImageData[] = [ brandImg_1, brandImg_2, brandImg_3, brandImg_4, brandImg_5, brandImg_6, brandImg_7, brandImg_4];
+const brand_data: any[] = [ brandImg_1, brandImg_2, brandImg_3, brandImg_4, brandImg_5, brandImg_6, brandImg_7, brandImg_4];
 
 const settings = {
    dots: false,
@@ -71,7 +70,7 @@ const Brand = () => {
                   {brand_data.map((item, i) => (
                      <div key={i} className="col-12">
                         <div className="brand-item">
-                           <Image src={item} alt="" />
+                           <img src={item} alt="" />
                         </div>
                      </div>
                   ))}

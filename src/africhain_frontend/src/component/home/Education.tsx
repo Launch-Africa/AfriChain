@@ -1,10 +1,9 @@
-import Image, { StaticImageData } from "next/image";
 
-import choose_thumb_1 from "@/assets/img/update/bg/bg-gradient1-1.jpg"
+import choose_thumb_1 from "/assets/img/update/bg/bg-gradient1-1.jpg"
 
-import info_icon from "@/assets/img/update/icon/info-circle.svg"
-import people from "@/assets/img/update/icon/people-fill.svg"
-import gradcap from "@/assets/img/update/icon/gradcap.svg";
+import info_icon from "/assets/img/update/icon/info-circle.svg"
+import people from "/assets/img/update/icon/people-fill.svg"
+import gradcap from "/assets/img/update/icon/gradcap.svg";
 
 interface DataType {
    id: number;
@@ -17,7 +16,7 @@ interface DataType {
 
 interface DataType2 {
    id: number;
-   icon: StaticImageData;
+   icon: any;
    title: string;
    price?: string;
    desc: string;
@@ -52,7 +51,7 @@ const Education = () => {
    return (
       <div className="wcu-area-1 pt-130 pb-140 position-relative" id="feature">
          <div className="bg-gradient-1">
-            <Image src={choose_thumb_1} alt="img" />
+            <img src={choose_thumb_1} alt="img" />
          </div>
          <div className="container">
             <div className="mb-25">
@@ -71,7 +70,7 @@ const Education = () => {
                   {choose_data.slice(0, 3).map((item) => (
                      <div key={item.id} className="feature-card">
                         <div className="feature-card-icon">
-                           <Image src={item.icon} alt="img" width={48} height={48} />
+                           <img src={item.icon} alt="img" width={48} height={48} />
                         </div>
                         <div className="feature-card-details">
                            <h4 className="feature-card-title">{item.title}</h4>

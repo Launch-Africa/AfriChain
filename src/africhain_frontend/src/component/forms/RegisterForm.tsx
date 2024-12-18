@@ -2,7 +2,7 @@
 import { useState } from "react";
 import CloseEye from "../../svg/CloseEye";
 import OpenEye from "../../svg/OpenEye";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 import { toast } from 'react-toastify';
 import * as yup from "yup";
@@ -78,7 +78,7 @@ const RegisterForm = ({ style }: any) => {
                <label htmlFor="remeber">Remember me</label>
             </div>
             <div className="eg-login__forgot">
-               <Link href="/forgot">Forgot Password?</Link>
+               <Link to="/forgot">Forgot Password?</Link>
             </div>
          </div>
          <div className="eg-login__bottom">

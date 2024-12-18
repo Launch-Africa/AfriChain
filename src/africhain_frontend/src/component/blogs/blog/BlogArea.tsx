@@ -1,9 +1,7 @@
 "use client"
 import blog_data from "../../../data/BlogData"
-import Image from "next/image"
-import Link from "next/link"
+import { Link } from "react-router-dom";
 import BlogSidebar from "../blog-common/BlogSidebar"
-import ReactPaginate from "react-paginate"
 import { useState } from "react"
 
 const BlogArea = () => {
@@ -55,24 +53,24 @@ const BlogArea = () => {
                      {currentItems.filter(item => item.post === "masonry").map((item) => (
                         <div key={item.id} className="blog-masonry-post">
                            <div className="blog-masonry-thumb">
-                              <Link href={`blog-details/${item.id}`}><Image src={item.thumb} alt="" /></Link>
+                              <Link to={`blog-details/${item.id}`}><img src={item.thumb} alt="" /></Link>
                            </div>
                            <div className="blog-masonry-content">
                               <div className="blog-meta">
                                  <ul className="list-wrap">
                                     <li><i className="far fa-clock"></i>{item.date}</li>
-                                    <li><Link href={`blog-details/${item.id}`}><i className="far fa-comment"></i>{item.comment}</Link></li>
+                                    <li><Link to={`blog-details/${item.id}`}><i className="far fa-comment"></i>{item.comment}</Link></li>
                                     <li><i className="far fa-eye"></i>{item.views}</li>
                                  </ul>
                               </div>
-                              <h2 className="title"><Link href={`blog-details/${item.id}`}>{item.title}</Link></h2>
+                              <h2 className="title"><Link to={`blog-details/${item.id}`}>{item.title}</Link></h2>
                               <p>{item.desc}</p>
                               <div className="content-bottom">
                                  <div className="blog-author">
-                                    <Link href={`blog-details/${item.id}`}><Image src={item.author_avatar} alt="" />{item.author_name}</Link>
+                                    <Link to={`blog-details/${item.id}`}><img src={item.author_avatar} alt="" />{item.author_name}</Link>
                                  </div>
                                  <div className="read-more-btn">
-                                    <Link href={`blog-details/${item.id}`}>Read More<i className="fas fa-arrow-right"></i></Link>
+                                    <Link to={`blog-details/${item.id}`}>Read More<i className="fas fa-arrow-right"></i></Link>
                                  </div>
                               </div>
                            </div>
@@ -82,21 +80,21 @@ const BlogArea = () => {
                      {currentItems.filter(item => item.post === "standard").map((item) => (
                         <div key={item.id} className="blog-standard-post">
                            <div className="blog-standard-thumb">
-                              <Link href={`blog-details/${item.id}`}><Image src={item.thumb} alt="" /></Link>
+                              <Link to={`blog-details/${item.id}`}><img src={item.thumb} alt="" /></Link>
                            </div>
                            <div className="blog-standard-content">
                               <div className="blog-meta">
                                  <ul className="list-wrap">
-                                    <li className="blog-author"><Link href={`blog-details/${item.id}`}><Image src={item.author_avatar} alt="" />{item.author_name}</Link></li>
+                                    <li className="blog-author"><Link to={`blog-details/${item.id}`}><img src={item.author_avatar} alt="" />{item.author_name}</Link></li>
                                     <li><i className="far fa-clock"></i>{item.date}</li>
-                                    <li><Link href={`blog-details/${item.id}`}><i className="far fa-comment"></i>{item.comment}</Link></li>
+                                    <li><Link to={`blog-details/${item.id}`}><i className="far fa-comment"></i>{item.comment}</Link></li>
                                     <li><i className="far fa-eye"></i>{item.views}</li>
                                  </ul>
                               </div>
-                              <h2 className="title"><Link href={`blog-details/${item.id}`}>{item.title}</Link></h2>
+                              <h2 className="title"><Link to={`blog-details/${item.id}`}>{item.title}</Link></h2>
                               <p>{item.desc}</p>
                               <div className="read-more-btn">
-                                 <Link href={`blog-details/${item.id}`}>Read More<i className="fas fa-arrow-right"></i></Link>
+                                 <Link to={`blog-details/${item.id}`}>Read More<i className="fas fa-arrow-right"></i></Link>
                               </div>
                            </div>
                         </div>

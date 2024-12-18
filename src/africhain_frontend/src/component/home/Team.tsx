@@ -1,33 +1,44 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image"
 import TeamFounder from "./TeamFounder"
 import team_data from "../../data/TeamData";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
-import team_bg from "@/assets/img/update/bg/bg-gradient1-1.jpg"
+import team_bg from "/assets/img/update/bg/bg-gradient1-1.jpg"
 
 const Team = () => {
    // Init one ref to store the future Isotope object
-   const isotope = useRef<{ arrange?: Function; destroy?: Function } | null>(null);
-   // Store the filter keyword in a state
-   const [filterKey, setFilterKey] = useState("cat1"); // Setting filterKey to "cat1" for initial display
+   const isotope = useRef<any>(null);
+   // State to store the filter key
+   const [filterKey, setFilterKey] = useState("cat1"); // Default category
 
-   // Initialize an Isotope object with configs
+   // Initialize Isotope
    useEffect(() => {
+      let IsotopeClass: any;
+
       if (typeof window !== "undefined") {
-         const Isotope = require("isotope-layout");
+         import("isotope-layout")
+            .then((IsotopeModule) => {
+               IsotopeClass = IsotopeModule.default;
 
-         isotope.current = new Isotope(".filter-active-cat1", {
-            itemSelector: ".filter-item",
-            layoutMode: "fitRows",
-         });
-
-         // Cleanup
-         return () => {
-            isotope.current?.destroy?.();
-         };
+               // Initialize Isotope instance
+               isotope.current = new IsotopeClass(".filter-active-cat1", {
+                  itemSelector: ".filter-item",
+                  layoutMode: "fitRows",
+               });
+            })
+            .catch((error) => {
+               console.error("Failed to load Isotope:", error);
+            });
       }
+
+      // Cleanup Isotope on component unmount
+      return () => {
+         if (isotope.current) {
+            isotope.current.destroy();
+            isotope.current = null;
+         }
+      };
    }, []);
 
    // Handling filter key change
@@ -46,7 +57,7 @@ const Team = () => {
    return (
       <div className="pt-130 pb-140 overflow-hidden position-relative z-index-common">
          <div className="bg-gradient-3">
-            <Image src={team_bg} alt="img" />
+            <img src={team_bg} alt="img" />
          </div>
          <TeamFounder />
 
@@ -69,15 +80,16 @@ const Team = () => {
                                  <li key={t_item.id}>
                                     <div className="team-card">
                                        <div className="team-card_img">
-                                          <Image src={t_item.thumb} alt="Team Image" />
+                                          <img src={t_item.thumb} alt="Team Image" />
                                           <div className="social-btn">
-                                             <Link href="https://www.linkedin.com/">
+                                             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
                                                 <i className="fab fa-linkedin"></i>
-                                             </Link>
+                                             </a>
+
                                           </div>
                                        </div>
                                        <div className="team-card_content">
-                                          <h3 className="team-card_title"><Link href="#">{t_item.name}</Link></h3>
+                                          <h3 className="team-card_title"><a href="#">{t_item.name}</a></h3>
                                        </div>
                                     </div>
                                  </li>

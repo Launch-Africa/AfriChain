@@ -1,52 +1,119 @@
-"use client";
-import Link from "next/link.js";
-import { usePathname } from "next/navigation";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+// internal
 import menu_data from "../../../data/MenuData";
 
-const NavMenu = () => {
-    const currentRoute = usePathname();
+const MobileMenus = ({ setIsActive }: any) => {
+  const [navTitle, setNavTitle] = useState("");
+  const location = useLocation();
+  const currentRoute = location.pathname;
 
-    const isMenuItemActive = (menuLink: string) => {
-        return currentRoute === menuLink;
-    };
+  // Check if menu item is active
+  const isMenuItemActive = (menuLink: string) => {
+    return currentRoute === menuLink;
+  };
 
-    const isSubMenuItemActive = (subMenuLink: string) => {
-        return currentRoute === subMenuLink;
-    };
+  // Check if submenu item is active
+  const isSubMenuItemActive = (subMenuLink: string) => {
+    return currentRoute === subMenuLink;
+  };
 
-    return (
-        <ul className="navigation">
-            {menu_data.filter((items) => items.page === "nav_1").map((menu: any) => (
-                <li key={menu.id}
-                    className={menu.has_dropdown ? "menu-item-has-children" : ""}
+  const closeSidebar = () => {
+    setIsActive(false);
+  };
+
+  // Open/close mobile menu
+  const openMobileMenu = (menu: any) => {
+    if (navTitle === menu) {
+      setNavTitle("");
+    } else {
+      setNavTitle(menu);
+    }
+  };
+
+  return (
+    <ul className="navigation">
+      {menu_data
+        .filter((items) => items.page === "nav_1")
+        .map((menu, i) => (
+          <React.Fragment key={i}>
+            {menu.has_dropdown && (
+              <li className="menu-item-has-children">
+                {/* Main Menu Link */}
+                <Link
+                  to={menu.link}
+                  onClick={closeSidebar}
+                  className={`${
+                    isMenuItemActive(menu.link) ||
+                    (menu.sub_menus &&
+                      menu.sub_menus.some((sub_m) =>
+                        sub_m.link && isSubMenuItemActive(sub_m.link)
+                      ))
+                      ? "active"
+                      : ""
+                  }`}
                 >
-                    <Link href={menu.link}
-                        className={`section-link ${(isMenuItemActive(menu.link) || (menu.sub_menus && menu.sub_menus.some((sub_m: any) => sub_m.link && isSubMenuItemActive(sub_m.link)))) ? "active" : ""}`}>
-                        {menu.title}
-                    </Link>
+                  {menu.title}
+                </Link>
+                {/* Dropdown Toggle */}
+                <div
+                  className={`dropdown-btn ${
+                    navTitle === menu.title ? "open" : ""
+                  }`}
+                  onClick={() => openMobileMenu(menu.title)}
+                >
+                  <i
+                    className={`${
+                      navTitle === menu.title
+                        ? "fas fa-angle-up"
+                        : "fas fa-angle-down"
+                    }`}
+                  ></i>
+                </div>
 
-                    {menu.has_dropdown && (
-                        <>
-                            {menu.sub_menus && (
-                                <ul className="sub-menu">
-                                    {menu.sub_menus.map((sub_m: any, i: any) => (
-                                        <li key={i}>
-                                            <Link
-                                                href={sub_m.link}
-                                                className={
-                                                    sub_m.link && isSubMenuItemActive(sub_m.link) ? "active" : ""}>
-                                                {sub_m.title}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </>
-                    )}
-                </li>
-            ))}
-        </ul>
-    );
+                {/* Submenu */}
+                {menu.sub_menus && menu.sub_menus.length > 0 && (
+                  <ul
+                    className="sub-menu"
+                    style={{
+                      display: navTitle === menu.title ? "block" : "none",
+                    }}
+                  >
+                    {menu.sub_menus.map((sub, index) => (
+                      <li key={index}>
+                        <Link
+                          to={sub.link}
+                          onClick={closeSidebar}
+                          className={
+                            sub.link && isSubMenuItemActive(sub.link)
+                              ? "active"
+                              : ""
+                          }
+                        >
+                          {sub.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            )}
+            {/* Non-dropdown Menu Item */}
+            {!menu.has_dropdown && (
+              <li>
+                <Link
+                  to={menu.link}
+                  onClick={closeSidebar}
+                  className={isMenuItemActive(menu.link) ? "active" : ""}
+                >
+                  {menu.title}
+                </Link>
+              </li>
+            )}
+          </React.Fragment>
+        ))}
+    </ul>
+  );
 };
 
-export default NavMenu;
+export default MobileMenus;

@@ -1,5 +1,5 @@
 "use client"
-import Link from "next/link"
+import { Link } from "react-router-dom";
 
 import { toast } from 'react-toastify';
 import * as yup from "yup";
@@ -49,7 +49,7 @@ const ForgotForm = () => {
                            <div className="eg-login__bottom mt-30">
                               <button type="submit" className="btn w-100">Send Mail</button>
                            </div>
-                           <p>Remeber Passowrd? <Link href="/login">Login</Link></p>
+                           <p>Remeber Passowrd? <Link to="/login">Login</Link></p>
                         </div>
                      </form>
                   </div>

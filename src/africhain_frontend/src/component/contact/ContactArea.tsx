@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import ContactForm from "../forms/ContactForm"
 
 interface DataType {
@@ -19,13 +19,13 @@ const contact_data: DataType[] = [
       id: 2,
       icon: "fas fa-phone-alt",
       title: "Contact",
-      info: (<><Link href="tel:0123456789">+27(0) 123-4589</Link> <br /> <Link href="tel:0123456789">+263(0) 555-01117</Link></>),
+      info: (<><Link to="tel:0123456789">+27(0) 123-4589</Link> <br /> <Link to="tel:0123456789">+263(0) 555-01117</Link></>),
    },
    {
       id: 3,
       icon: "fas fa-envelope",
       title: "Email",
-      info: (<><Link href="mailto:xeco.@example.com">info@africhain.com</Link> <br /> <Link href="mailto:xeco.@example.com">contact@africhain.com</Link></>),
+      info: (<><Link to="mailto:xeco.@example.com">info@africhain.com</Link> <br /> <Link to="mailto:xeco.@example.com">contact@africhain.com</Link></>),
    },
    {
       id: 4,

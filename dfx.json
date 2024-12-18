@@ -5,9 +5,6 @@
       "type": "motoko"
     },
     "africhain_frontend": {
-      "dependencies": [
-        "africhain_backend"
-      ],
       "source": [
         "src/africhain_frontend/dist"
       ],

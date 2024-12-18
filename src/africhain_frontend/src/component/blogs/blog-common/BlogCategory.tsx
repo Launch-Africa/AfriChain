@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 interface DataType {
    id: number;
@@ -17,7 +17,7 @@ const BlogCategory = () => {
          <div className="sidebar-cat-list">
             <ul className="list-wrap">
                {category_data.map((category, index) => (
-                  <li key={index}><Link href="#">{category.title} <span>{category.count}</span></Link></li>
+                  <li key={index}><Link to="#">{category.title} <span>{category.count}</span></Link></li>
                ))}
             </ul>
          </div>

@@ -1,6 +1,5 @@
-import Image from "next/image";
 
-import intro_thumb from "@/assets/img/update/normal/intro_1-1.png";
+import intro_thumb from "/assets/img/update/normal/intro_1-1.png";
 
 interface DataType {
    id: number;
@@ -49,7 +48,7 @@ const IntroArea = () => {
                </div>
                <div className="col-xl-6">
                   <div className="intro-thumb1 alltuchtopdown">
-                     <Image src={intro_thumb} alt="img" />
+                     <img src={intro_thumb} alt="img" />
                   </div>
                   <div className="intro-wrap mt-50">
                      <h6 className="intro-wrap-title">Our Mission & Vision</h6>

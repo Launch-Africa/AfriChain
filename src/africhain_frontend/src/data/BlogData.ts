@@ -1,25 +1,25 @@
-import { StaticImageData } from "next/image";
 
-import blogThumb_1 from "@/assets/img/blog/blog_masonry01.jpg"
-import blogThumb_2 from "@/assets/img/blog/blog_masonry02.jpg"
-import blogThumb_3 from "@/assets/img/blog/blog_standard01.jpg"
-import blogThumb_4 from "@/assets/img/blog/blog_standard02.jpg"
 
-import blogAvatar_1 from "@/assets/img/blog/blog_author01.png"
-import blogAvatar_2 from "@/assets/img/blog/blog_author02.png"
-import blogAvatar_3 from "@/assets/img/blog/blog_author03.png"
-import blogAvatar_4 from "@/assets/img/blog/blog_author04.png"
+import blogThumb_1 from "/assets/img/blog/blog_masonry01.jpg"
+import blogThumb_2 from "/assets/img/blog/blog_masonry02.jpg"
+import blogThumb_3 from "/assets/img/blog/blog_standard01.jpg"
+import blogThumb_4 from "/assets/img/blog/blog_standard02.jpg"
+
+import blogAvatar_1 from "/assets/img/blog/blog_author01.png"
+import blogAvatar_2 from "/assets/img/blog/blog_author02.png"
+import blogAvatar_3 from "/assets/img/blog/blog_author03.png"
+import blogAvatar_4 from "/assets/img/blog/blog_author04.png"
 
 interface DataType {
    id: number;
    post: string;
-   thumb: StaticImageData;
+   thumb: any;
    date: string;
    comment: string;
    views: string;
    title: string;
    desc: string;
-   author_avatar: StaticImageData;
+   author_avatar: any;
    author_name: string;
 }
 

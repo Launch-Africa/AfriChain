@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 
-import logo_1 from "@/assets/img/logo/logo.png";
+import logo_1 from "/assets/img/logo/logo.png";
 
 const Sidebar = ({ isActive, setIsActive }: any) => {
 
@@ -13,7 +12,7 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                 <nav className="menu-box">
                     <div onClick={() => setIsActive(false)} className="close-btn"><i className="fas fa-times"></i></div>
                     <div className="nav-logo">
-                        <Link href="/"><Image src={logo_1} alt="Logo" /></Link>
+                        <Link to="/"><img src={logo_1} alt="Logo" /></Link>
                     </div>
                     <div className="menu-outer">
                         <MobileMenu setIsActive={setIsActive} />

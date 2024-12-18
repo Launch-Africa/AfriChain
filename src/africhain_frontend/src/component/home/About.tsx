@@ -1,11 +1,11 @@
-import Image, { StaticImageData } from "next/image";
 
-import choose_thumb_1 from "@/assets/img/update/bg/bg-gradient1-1.jpg"
-import choose_thumb_2 from "@/assets/img/update/normal/why_1-1.png"
 
-import icon_1 from "@/assets/img/update/icon/feature-icon1-1.svg"
-import icon_2 from "@/assets/img/update/icon/feature-icon1-2.svg"
-import icon_3 from "@/assets/img/update/icon/feature-icon1-3.svg"
+import choose_thumb_1 from "/assets/img/update/bg/bg-gradient1-1.jpg"
+import choose_thumb_2 from "/assets/img/update/normal/why_1-1.png"
+
+import icon_1 from "/assets/img/update/icon/feature-icon1-1.svg"
+import icon_2 from "/assets/img/update/icon/feature-icon1-2.svg"
+import icon_3 from "/assets/img/update/icon/feature-icon1-3.svg"
 
 interface DataType {
    id: number;
@@ -18,7 +18,7 @@ interface DataType {
 
 interface DataType2 {
    id: number;
-   icon: StaticImageData;
+   icon: any;
    title: string;
    price?: string;
    desc: string;
@@ -69,7 +69,7 @@ const About = () => {
    return (
       <div className="wcu-area-1 pt-130 pb-140 position-relative" id="about">
          <div className="bg-gradient-1">
-            <Image src={choose_thumb_1} alt="img" />
+            <img src={choose_thumb_1} alt="img" />
          </div>
          <div className="container">
             <div className="mb-25">
@@ -83,7 +83,7 @@ const About = () => {
                   </div>
                   <div className="col-lg-5">
                      <div className="wcu-thumb text-center alltuchtopdown">
-                        <Image src={choose_thumb_2} alt="img" />
+                        <img src={choose_thumb_2} alt="img" />
                      </div>
                   </div>
                </div>
@@ -93,7 +93,7 @@ const About = () => {
                   {choose_data.slice(0, 3).map((item) => (
                      <div key={item.id} className="feature-card">
                         <div className="feature-card-icon">
-                           <Image src={item.icon} alt="img" />
+                           <img src={item.icon} alt="img" />
                         </div>
                         <div className="feature-card-details">
                            <h4 className="feature-card-title">{item.title}</h4>
@@ -106,7 +106,7 @@ const About = () => {
                   {choose_data.slice(3, 6).map((item) => (
                      <div key={item.id} className="feature-card">
                         <div className="feature-card-icon">
-                           <Image src={item.icon} alt="img" />
+                           <img src={item.icon} alt="img" />
                         </div>
                         <div className="feature-card-details">
                            <h4 className="feature-card-title">{item.title}</h4>

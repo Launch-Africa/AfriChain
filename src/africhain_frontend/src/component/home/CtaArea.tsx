@@ -1,14 +1,13 @@
 "use client"
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
-import icon_1 from "@/assets/img/update/client/press-1-1.svg";
-import icon_2 from "@/assets/img/update/client/press-1-1.svg";
+import icon_1 from "/assets/img/update/client/press-1-1.svg";
+import icon_2 from "/assets/img/update/client/press-1-1.svg";
 
 interface DataType {
    id: number;
-   icon: StaticImageData;
+   icon: any;
    title: string;
    desc: JSX.Element;
 }[];
@@ -102,11 +101,11 @@ const CtaArea = () => {
                   <div key={item.id} className="col-lg-6">
                      <div className="cta-wrap1">
                         <div className="cta-wrap-details">
-                           <Image src={item.icon} alt="img" />
+                           <img src={item.icon} alt="img" />
                            <h3 className="cta-wrap-title">{item.title}</h3>
                            <p className="cta-wrap-text">{item.desc}</p>
                         </div>
-                        <Link className="btn btn4" href="/blog">READ MORE</Link>
+                        <Link className="btn btn4" to="/blog">READ MORE</Link>
                      </div>
                   </div>
                ))}

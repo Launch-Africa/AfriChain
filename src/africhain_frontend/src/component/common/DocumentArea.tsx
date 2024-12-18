@@ -1,8 +1,7 @@
-import Link from "next/link"
+import { Link } from "react-router-dom";
 import DocumentForm from "../forms/DocumentForm"
-import Image from "next/image"
 
-import docShape from "@/assets/img/images/document_shape.png"
+import docShape from "/assets/img/images/document_shape.png"
 
 const doc_data: string[] = ["Whitepaper", "Token Sale Terms", "Presentation", "Lightpaper"]
 
@@ -31,21 +30,21 @@ const DocumentArea = () => {
                         <ul className="list-wrap">
                            {doc_data.map((list, i) => (
                               <li key={i}>
-                                 <Link href="#">
+                                 <Link to="#">
                                     <span className="icon"><i className="fas fa-file-pdf"></i></span>
                                     {list}
                                  </Link>
                               </li>
                            ))}
                         </ul>
-                        <Link href="#" className="btn">Download All</Link>
+                        <Link to="#" className="btn">Download All</Link>
                      </div>
                   </div>
                </div>
             </div>
          </div>
          <div className="document-shape">
-            <Image src={docShape} alt="" className="alltuchtopdown" />
+            <img src={docShape} alt="" className="alltuchtopdown" />
          </div>
       </section>
    )

@@ -1,7 +1,6 @@
-import Image from "next/image";
 import faq_data from "../../data/FaqData";
 
-import faq_thumb_1 from "@/assets/img/update/normal/faq_1-1.png";
+import faq_thumb_1 from "/assets/img/update/normal/faq_1-1.png";
 
 const FaqArea = () => {
    
@@ -16,7 +15,7 @@ const FaqArea = () => {
                         We&apos;re here to help.</p>
                   </div>
                   <div className="faq-thumb mt-60">
-                     <Image src={faq_thumb_1} alt="img" />
+                     <img src={faq_thumb_1} alt="img" />
                   </div>
                </div>
                <div className="col-xxl-6 col-xl-8">

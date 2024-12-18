@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "react-router-dom";
 
 const Error = () => {
    return (
@@ -11,7 +11,7 @@ const Error = () => {
                         <div className="eg-error__content text-center">
                            <h2 className="eg-error__title">404</h2>
                            <p>&quot;Sorry, the page you are looking for could not be found&quot;</p>
-                           <Link className="btn" href="/">Back to home</Link>
+                           <Link className="btn" to="/">Back to home</Link>
                         </div>
                      </div>
                   </div>

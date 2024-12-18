@@ -1,5 +1,4 @@
-import Image from "next/image"
-import Link from "next/link"
+import { Link } from "react-router-dom";
 
 const BlogComment = () => {
    return (
@@ -10,7 +9,7 @@ const BlogComment = () => {
                <li>
                   <div className="comments-box">
                      <div className="comments-avatar">
-                        <Image 
+                        <img 
                           src="/assets/img/blog/comment01.png" 
                           alt="img" 
                           width={60} 
@@ -19,7 +18,7 @@ const BlogComment = () => {
                      </div>
                      <div className="comments-text">
                         <div className="avatar-name">
-                           <h6 className="name">Reed Floren <Link href="#" className="reply-btn">Reply</Link></h6>
+                           <h6 className="name">Reed Floren <Link to="#" className="reply-btn">Reply</Link></h6>
                            <span className="date">August 13, 2024</span>
                         </div>
                         <p>The platform itself was incredibly user-friendly, making it easy for me to participate in the ICO. The intuitive interface guided me through the token purchase process seamlessly.</p>
@@ -30,7 +29,7 @@ const BlogComment = () => {
                      <li>
                         <div className="comments-box">
                            <div className="comments-avatar">
-                              <Image 
+                              <img 
                                 src="/assets/img/blog/comment02.png" 
                                 alt="img" 
                                 width={60} 
@@ -39,7 +38,7 @@ const BlogComment = () => {
                            </div>
                            <div className="comments-text">
                               <div className="avatar-name">
-                                 <h6 className="name">Tony Dargis <Link href="#" className="reply-btn">Reply</Link></h6>
+                                 <h6 className="name">Tony Dargis <Link to="#" className="reply-btn">Reply</Link></h6>
                                  <span className="date">August 15, 2024</span>
                               </div>
                               <p>What stood out to me the most was the exceptional customer support. The team behind the platform was responsive and

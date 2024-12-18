@@ -1,8 +1,7 @@
 "use client"
-import Link from "next/link";
-import Image from "next/image";
 import RegisterForm from "../forms/RegisterForm";
 import LoginForm from "../forms/LoginForm";
+import { Link } from "react-router-dom";
 
 const LogingArea = ({ style }: any) => {
 
@@ -15,11 +14,11 @@ const LogingArea = ({ style }: any) => {
                      {style ? (
                         <div className="eg-login__top text-center mb-30">
                            <h3 className="eg-login__title">Sign Up.</h3>
-                           <p>Already have an account? <span><Link href="/login">Sign In</Link></span></p>
+                           <p>Already have an account? <span><Link to="/login">Sign In</Link></span></p>
                         </div>) : (
                         <div className="eg-login__top text-center mb-30">
                            <h3 className="eg-login__title">Login.</h3>
-                           <p>Don’t have an account? <span><Link href="/register">Create a free account</Link></span></p>
+                           <p>Don’t have an account? <span><Link to="/register">Create a free account</Link></span></p>
                         </div>)}
                      <div className="eg-login__option">
                         {style ? <RegisterForm /> : <LoginForm />}
@@ -28,10 +27,10 @@ const LogingArea = ({ style }: any) => {
                         </div>
                         <div className="eg-login__social mb-10 ">
                            <div className="eg-login__option-item">
-                              <Link href="#"><Image src="/assets/img/icons/internet-computer-icp-logo.svg" alt="" width={26} height={26} style={{objectFit: 'contain'}} /> Sign in with Internet Identity </Link>
+                              <Link to="#"><img src="/assets/img/icons/internet-computer-icp-logo.svg" alt="" width={26} height={26} style={{objectFit: 'contain'}} /> Sign in with Internet Identity </Link>
                            </div>
                            <div className="eg-login__option-item">
-                              <Link href="#"><Image src="/assets/img/icons/google.svg" alt=""  /> Sign in with google </Link>
+                              <Link to="#"><img src="/assets/img/icons/google.svg" alt=""  /> Sign in with google </Link>
                            </div>
                            
                         </div>

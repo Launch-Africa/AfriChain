@@ -1,16 +1,14 @@
 "use client"
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
-import Slider from "react-slick";
-
-import partnerThumb_1 from "@/assets/img/update/client/internet-computer-icp-logo.svg"
-import partnerThumb_2 from "@/assets/img/update/client/kongswap.png"
-import partnerThumb_3 from "@/assets/img/update/client/client-1-5.svg"
-import partnerThumb_4 from "@/assets/img/update/client/client-1-4.svg"
+import { Link } from "react-router-dom";
+import partnerThumb_1 from "/assets/img/update/client/internet-computer-icp-logo.svg"
+import partnerThumb_2 from "/assets/img/update/client/kongswap.png"
+import partnerThumb_3 from "/assets/img/update/client/client-1-5.svg"
+import partnerThumb_4 from "/assets/img/update/client/client-1-4.svg"
+import Slider from 'react-slick';
 
 interface DataType {
    id: number;
-   icon: StaticImageData;
+   icon: any;
    desc: JSX.Element;
 }[];
 
@@ -47,54 +45,54 @@ const partner_data: DataType[] = [
    // },
 ];
 
-const settings={
+const settings = {
    dots: true,
-	infinite: true,
-	speed: 1000,
-	autoplay: true,
-	spaceBetween: 30,
-	arrows: false,
-	slidesToShow: 3,
-	slidesToScroll: 1,
-	responsive: [
-		{
-			breakpoint: 1400,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1,
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			}
-		},
-	]
+   infinite: true,
+   speed: 1000,
+   autoplay: true,
+   spaceBetween: 30,
+   arrows: false,
+   slidesToShow: 3,
+   slidesToScroll: 1,
+   responsive: [
+      {
+         breakpoint: 1400,
+         settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+         }
+      },
+      {
+         breakpoint: 1200,
+         settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+         }
+      },
+      {
+         breakpoint: 992,
+         settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+         }
+      },
+      {
+         breakpoint: 767,
+         settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+         }
+      },
+      {
+         breakpoint: 575,
+         settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+         }
+      },
+   ]
 }
 
 
@@ -111,16 +109,16 @@ const PartnerArea = () => {
                      <div key={item.id} className="col-lg-4">
                         <div className="partner-card">
                            <div className="partner-card-img">
-                              <Image 
-                                 src={item.icon} 
-                                 alt="img" 
-                                 width={150} 
-                                 height={60} 
-                                 style={{ objectFit: 'contain' }} 
+                              <img
+                                 src={item.icon}
+                                 alt="img"
+                                 width={150}
+                                 height={60}
+                                 style={{ objectFit: 'contain' }}
                               />
                            </div>
                            <p className="partner-card-text">{item.desc}</p>
-                           <Link className="btn btn3" href="/blog">EXPLORE</Link>
+                           <Link className="btn btn3" to="/blog">EXPLORE</Link>
                         </div>
                      </div>
                   ))}
